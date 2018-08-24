@@ -1,0 +1,66 @@
+<div class="page-header" style="background: url(assets/img/banner1.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumb-wrapper">
+          <h2 class="product-title">Login</h2>
+          <ol class="breadcrumb">
+            <li>
+              <a href="index-2.html">Home /</a>
+            </li>
+            <li class="current">User need to Login before posting an Add</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="login section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-12 col-xs-12">
+        <div class="alert alert-danger" align="center" *ngIf="wrongCred" role="alert">
+          Invalid Username and password
+        </div>
+        <div class="login-form login-area">
+
+          <h3>
+            Login Now
+          </h3>
+          <form role="form" class="login-form" #form="ngForm" (submit)="login(form.value);" novalidate>
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-user"></i>
+                <input type="text" id="sender-email" class="form-control" ngModel name="emailId" #username placeholder="Username" required>
+                <span class="validation" *ngIf="username.touched && username.invalid"> Enter the username </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-lock"></i>
+                <input type="password" class="form-control" placeholder="Password" ngModel name="password" #password required>
+                <span class="validation" *ngIf="password.touched && password.invalid"> Enter the password </span>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+
+              <a class="forgetpassword" (click)="Redirectsignup()">Register for new user</a>
+            </div>
+            <div class="text-center">
+
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button class="btn btn-common log-btn" [disabled]="form.invalid">Submit</button>
+
+            </div>
+          </form>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="btn btn-common btn-facebook" (click)="signInWithFB()">
+            <span class="fa fa-facebook"></span>Sign in with Facebook</button>
+          <br/>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

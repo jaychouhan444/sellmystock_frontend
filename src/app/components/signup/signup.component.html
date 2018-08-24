@@ -1,0 +1,78 @@
+<div class="page-header" style="background: url(assets/img/banner1.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumb-wrapper">
+          <h2 class="product-title">Join Us</h2>
+          <ol class="breadcrumb">
+            <li>
+              <a href="#">Home /</a>
+            </li>
+            <li class="current">Register</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="register section-padding">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-12 col-xs-12">
+        <div class="register-form login-area">
+          <h3>
+            Register
+          </h3>
+
+          <form class="login-form" #form="ngForm" (submit)="register(form.value);form.reset();"> 
+
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-user"></i>
+                <input type="text" class="form-control" name="mob" ngModel  #mob  placeholder="Enter the Contact" required>
+                <span class="validation" *ngIf="mob.touched && mob.required"> Enter the password </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-phone-handset icon-radius"></i>
+                <input type="text" class="form-control" name="name" ngModel  #name required placeholder="Enter the Name">
+                <span class="validation" *ngIf="name.touched && name.invalid"> Name feild cannot be empty </span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-envelope"></i>
+                <input type="email" class="form-control" name="emailId" ngModel  #emailId required placeholder="Enter the E-mail ID">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-lock"></i>
+                <input type="password" class="form-control" name="password" ngModel  #password required placeholder="Enter the password">
+              </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-icon">
+                  <i class="lni-lock"></i>
+                  <input type="text" class="form-control" name="type" ngModel  #type required placeholder="Enter the type">
+                </div>
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-common log-btn" [disabled]="form.invalid" >Register</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
